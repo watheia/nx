@@ -1,0 +1,48 @@
+{
+  "npmScope": "watheia",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "YTEzYTBiZTktZDM2NC00MDZhLWJlMDAtNWNiM2Y0ZjhhMGEyfHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "starter": {
+      "tags": []
+    },
+    "starter-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "starter"
+      ]
+    }
+  }
+}
